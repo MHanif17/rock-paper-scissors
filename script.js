@@ -42,9 +42,9 @@ function playRound(humanChoice, computerChoice, scores) {
   }
 
   if (
-    ("rock" && computer === "scissors") ||
-    ("paper" && computer === "rock") ||
-    ("scissors" && computer === "paper")
+    (human === "rock" && computer === "scissors") ||
+    (human === "paper" && computer === "rock") ||
+    (human === "scissors" && computer === "paper")
   ) {
     console.log(`You win! ${human} beats ${computer}`);
     scores.human++;
@@ -63,7 +63,7 @@ function playGame() {
     computer: computerScore,
   };
 
-  for (let index = 0; index < 5; index++) {
+  for (let index = 1; index <= 5; index++) {
     console.log(`---round ${index}---`);
 
     const humanSelection = getHumanChoice();
@@ -73,7 +73,7 @@ function playGame() {
     console.log(`Score: human ${scores.human} & computer ${scores.computer}`);
   }
 
-  console.log("===Final Result===");
+  console.log("=== Final Result ===");
   if (scores.human > scores.computer) {
     console.log("🎉 You win the game!");
   } else if (scores.human < scores.computer) {
