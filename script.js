@@ -69,6 +69,11 @@ function playGame() {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
+    if (humanSelection === null) {
+      console.log("Game Stopped");
+      break;
+    }
+
     playRound(humanSelection, computerSelection, scores);
     console.log(`Score: human ${scores.human} & computer ${scores.computer}`);
   }
